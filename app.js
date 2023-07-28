@@ -4,11 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const router = require('./routes/index');
 
-mongoose.connect('mongodb://localhost:27017/mestodb')
-  .then(() => console.log('MongoDB conected'))
-  .catch((err) => {
-    console.error('Error connecting to MongoDB', err);
-  });
+mongoose.connect('mongodb://localhost:27017/mestodb');
 
 app.use((req, res, next) => {
   req.user = { _id: '64c43f80017f746cbc9172de' };
