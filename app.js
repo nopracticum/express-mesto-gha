@@ -12,14 +12,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.listen(3000, () => {
-  console.log('App listening');
-});
-
 app.use(express.json());
 
 app.use('/', router);
 
 app.use('/', (req, res) => {
   res.status(404).send({ message: 'Page not found' });
+});
+
+app.listen(3000, () => {
+  console.log('App listening');
 });
